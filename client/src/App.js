@@ -10,6 +10,8 @@ import SummerInternshipStatusForm from "./components/student/pages/SummerInterns
 import StudentProfile from "./components/student/pages/StudentProfile";
 import LoginPage from "./components/pages/LoginPage";
 import PasswordResetPage from "./components/pages/PasswordResetPage";
+import AdminLayout from "./components/admin/AdminLayout";
+import ManageCompanyApprovals from "./components/admin/pages/ManageCompanyApprovals";
 
 function App() {
   return (
@@ -40,6 +42,14 @@ function App() {
           />
           <Route path="/StudentProfile" element={<StudentProfile />} />
         </Route>
+
+        <Route path="/admin" element={<AdminLayout/>}>
+        <Route
+            path="/admin/ManageCompanyApprovals"
+            element={<ManageCompanyApprovals />}
+          />
+        </Route>
+
       </Routes>
     </Router>
   );
