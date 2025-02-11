@@ -22,10 +22,10 @@ const LoginPage = () => {
 
   const getUsername = () => {
     switch(selectedTab) {
-      case 'student': return "student@charusat.edu.in";
-      case 'guide': return "guide@charusat.ac.in";
-      case 'admin': return "admin@charusat.ac.in";
-      default: return "username@domain.com";
+      case 'student': return "student";
+      case 'guide': return "guide";
+      case 'admin': return "admin";
+      default: return "username";
     }
   };
 

@@ -7,6 +7,8 @@ import { Textarea } from '../../ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../../ui/select';
 
 const WeeklyReportForm = () => {
+
+  
   const [currentStep, setCurrentStep] = useState(1);
   const [formData, setFormData] = useState({
     studentName: '',
