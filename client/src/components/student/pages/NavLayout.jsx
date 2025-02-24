@@ -62,7 +62,13 @@ const NavLayout = ({ children }) => {
     <div className="min-h-screen flex flex-col lg:flex-row">
       {/* Mobile Header */}
       <div className="lg:hidden fixed top-0 w-full bg-white z-50 px-4 py-3 border-b shadow-md flex justify-between items-center">
-        <h2 className="text-xl font-bold text-gray-700">Internship Portal</h2>
+      <div className="h-20 flex items-center">
+        <img
+          src="/images/logo.png"
+          alt="Company Logo"
+          className="h-full w-auto object-contain max-w-[250px]"
+        />
+        </div>
         <div className="flex items-center space-x-2">
           <Button variant="ghost" size="icon" className="relative">
             <Bell size={20} className="text-gray-600" />
@@ -98,7 +104,13 @@ const NavLayout = ({ children }) => {
       `}
       >
         <div className="hidden lg:flex p-4 border-b bg-gray-100 justify-between items-center">
-          <h2 className="text-xl font-bold text-gray-700">Internship Portal</h2>
+        <div className="h-20 flex items-center">
+        <img
+          src="/images/logo.png"
+          alt="Company Logo"
+          className="h-full w-auto object-contain max-w-[250px]"
+        />
+        </div>
         </div>
 
         {/* Navigation Items */}

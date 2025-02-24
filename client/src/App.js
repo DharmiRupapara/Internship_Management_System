@@ -12,6 +12,11 @@ import LoginPage from "./components/pages/LoginPage";
 import PasswordResetPage from "./components/pages/PasswordResetPage";
 import AdminLayout from "./components/admin/AdminLayout";
 import ManageCompanyApprovals from "./components/admin/pages/ManageCompanyApprovals";
+import StudentManagementPages from "./components/admin/pages/StudentManagementPages";
+import AddStudentPage from "./components/admin/pages/AddStudentPage";
+import EditStudentPage from "./components/admin/pages/EditStudentPage";
+import DeleteStudentPage from "./components/admin/pages/DeleteStudentPage";
+import AddGuidePage from "./components/admin/pages/AddGuidePage";
 
 function App() {
   return (
@@ -49,7 +54,36 @@ function App() {
             element={<ManageCompanyApprovals />}
           />
         </Route>
-
+        <Route path="/admin" element={<AdminLayout/>}>
+        <Route
+            path="/admin/StudentManagementPages"
+            element={<StudentManagementPages />}
+          />
+        </Route>
+        <Route path="/admin" element={<AdminLayout/>}>
+        <Route
+            path="/admin/AddStudentPage"
+            element={<AddStudentPage />}
+          />
+        </Route>
+        <Route path="/admin" element={<AdminLayout/>}>
+        <Route
+            path="/admin/EditStudentPage"
+            element={<EditStudentPage />}
+          />
+        </Route>
+        <Route path="/admin" element={<AdminLayout/>}>
+        <Route
+            path="/admin/DeleteStudentPage"
+            element={<DeleteStudentPage />}
+          />
+        </Route>
+        <Route path="/admin" element={<AdminLayout/>}>
+        <Route
+            path="/admin/AddGuidePage"
+            element={<AddGuidePage/>}
+          />
+        </Route>
       </Routes>
     </Router>
   );

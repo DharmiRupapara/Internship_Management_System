@@ -31,6 +31,34 @@ const WeeklyReportForm = () => {
     { number: 3, title: "Progress Details", icon: <Target className="w-5 h-5" /> },
     { number: 4, title: "Analysis & Planning", icon: <FileText className="w-5 h-5" /> }
   ];
+  
+  // Add submitReportToAPI function
+  const submitReportToAPI = async (reportData) => {
+    try {
+      const response = await fetch('/api/weekly-reports', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          // Add your auth token here if needed
+          // 'Authorization': `Bearer ${localStorage.getItem('token')}`
+        },
+        body: JSON.stringify({
+          ...reportData,
+          student: 'YOUR_STUDENT_ID_HERE', // Replace with actual student ID
+        })
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message || 'Failed to submit report');
+      }
+
+      return await response.json();
+    } catch (error) {
+      console.error('Error submitting report:', error);
+      throw error;
+    }
+  };
 
   const validateStep = (step) => {
     const newErrors = {};

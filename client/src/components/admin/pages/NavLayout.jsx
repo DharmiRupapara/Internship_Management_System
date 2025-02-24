@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
-  LayoutDashboard,
   Building2,
   Users,
   FileText,
@@ -81,7 +80,13 @@ const NavLayout = ({ children }) => {
     <div className="min-h-screen flex flex-col lg:flex-row">
       {/* Mobile Header */}
       <div className="lg:hidden fixed top-0 w-full bg-white z-50 px-4 py-3 border-b shadow-md flex justify-between items-center">
-        <h2 className="text-xl font-bold text-gray-700">Internship Portal</h2>
+      <div className="h-20 flex items-center">
+        <img
+          src="/images/logo.png"
+          alt="Company Logo"
+          className="h-full w-auto object-contain max-w-[250px]"
+        />
+      </div>
         <div className="flex items-center space-x-2">
           <Button variant="ghost" size="icon" className="relative">
             <Bell size={20} className="text-gray-600" />
@@ -117,10 +122,16 @@ const NavLayout = ({ children }) => {
       `}
       >
         <div className="hidden lg:flex p-4 border-b bg-gray-100 justify-between items-center">
-          <h2 className="text-xl font-bold text-gray-700">Internship Portal</h2>
+          <div className="h-12 flex items-center">
+            <img
+              src="/images/logo.png"
+              alt="Company Logo"
+              cclassName="h-full w-auto object-contain max-w-[280px]"
+            />
+          </div>
         </div>
 
-        {/* Navigation Items */}
+        {/* Rest of the component remains the same */}
         <nav className="flex-1 overflow-y-auto">
           <ul className="p-4 space-y-2">
             {navItems.map((item, index) => (
@@ -138,9 +149,7 @@ const NavLayout = ({ children }) => {
           </ul>
         </nav>
 
-        {/* User Menu Section */}
         <div className="p-4 border-t bg-gray-100">
-          {/* Desktop Notifications */}
           <div className="hidden lg:flex justify-between items-center mb-4">
             <Button variant="ghost" size="icon" className="relative">
               <Bell size={20} className="text-gray-600" />
@@ -152,7 +161,6 @@ const NavLayout = ({ children }) => {
             </Button>
           </div>
 
-          {/* User Profile Dropdown */}
           <DropdownMenu
             trigger={
               <div className="flex items-center space-x-3">
@@ -180,7 +188,6 @@ const NavLayout = ({ children }) => {
         </div>
       </aside>
 
-      {/* Main Content */}
       <main className="flex-1 lg:min-h-screen bg-gray-50 mt-16 lg:mt-0">
         {children}
       </main>
